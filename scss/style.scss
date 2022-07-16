@@ -1,0 +1,913 @@
+
+@import "nullstyle.scss";
+
+
+
+html{
+  box-sizing: border-box;
+  *,*::before, *::after{
+    box-sizing: inherit;
+  }
+}  
+  
+
+body{
+  font-family: 'Lato';
+  font-style: normal;
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 24px;
+  color: #102746;
+}
+img{
+  max-width: 100%;//hokman etmeli suni sebabi contenirden cykmaz yaly
+  height: auto;
+}
+
+%headerABC{
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 24px;
+  color: #FFFFFF;
+
+}
+
+
+%mainbutton{
+  font-family: 'Lato';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 19px;
+  color: #FFFFFF;
+  background: #006DFE;
+} 
+%fototitle{
+  font-family: 'Lato';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 50px;
+  line-height: 60px;
+  color: #FFFFFF;
+}
+
+
+.wrapper{
+   
+    max-width: 1060px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+.wrapper_full{
+    max-width: 1262px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+.section-title{
+  font-family: 'Lato';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 35px;
+  line-height: 42px;
+  color: #102746;
+  position: relative;
+  padding-bottom: 10px;
+}
+.section-title::after{
+  display: block;
+  content: '';
+  width: 253px;
+  height: 3px;
+  background-color: #006DFE;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+  
+
+/*header styles start*/
+.header_active{
+    background: #0E1D28;
+
+  }
+.header{
+  position:fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  transition: .2s linear;
+  padding-bottom: 20px;
+  z-index: 999;
+  
+  .header_wrapper{
+    flex-wrap: wrap;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    padding-top: 56px;
+  }
+  .header_loga{
+    
+   
+    width: 150px;
+    height: 55px;
+  }
+  .header_list{
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .header_item{
+    margin-right: 82px;//arsinin razmeri
+    
+  }
+  .header_item:last-child{
+    margin-right: 0;
+  }//tazeden beryan in sonky elemendin otstupini 0  edip ayyrmk ucin
+  .header_link{
+    text-decoration: none;
+    @extend %headerABC;
+    
+  }
+  .header_link:hover, .header_link:focus, .header_link:active{
+    opacity: 0.75;
+  }
+
+  
+
+}
+.header_burger{
+  display: none;
+  width: 40px;
+  height: 28px;
+  position: relative;
+}
+.burger_line{
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 2px;
+  background-color: #FFFFFF;
+  left: 0;
+}
+.burger_line_first{
+  top: 0;
+}
+.burger_line_third{
+  bottom: 0;
+}
+.burger_line_second{
+  top: 50%;
+  transform: translateY(-50%);
+}
+/* header styles end*/
+/*main styles start*/
+.main{
+ 
+
+  /*intro styles start*/
+  .intro{
+    min-height: 100vh;
+    background: url(/img/jpg/001.jpg) no-repeat center;
+    background-size: cover;
+    padding-top: 263px;
+    padding-bottom: 223px;
+    background-color: rgba(0,0,0,0.3);
+    z-index: -2;
+    
+   
+    .intro_title{
+      max-width: 619px;
+      font-style: normal;
+      font-weight: 700;
+      font-size: 50px;
+      line-height: 60px;
+      color: #ffffff;
+      text-shadow: 4px 4px 5px goldenrod;
+      margin-bottom: 22px;
+     
+    }
+    .intro_subtitle{
+      text-shadow: 4px 4px 5px goldenrod;
+      max-width: 646px;
+      color: #FFFFFF;
+      margin-bottom: 59px;
+      font-size: 20px;
+      font-weight: 400; 
+    }
+    .search-form_info{
+      display: flex;
+      flex-wrap: wrap;
+    }
+    .search-form_field{
+      width: 297px;
+      background:transparent url(/img/png/02.png) no-repeat left top;
+      background-size: 24px;
+      border: 0;
+      font-size: 22px;
+      font-weight: 400;
+      text-shadow: 4px 4px 5px rgb(15, 17, 1);
+      border-bottom: 4px solid #BFC0C5;// inpudyn asagynda border razmeri we renki
+      margin-right: 60px;//2 input arasy
+      padding-left: 43px;//otstup kolsodan inpuda tarap
+      padding-bottom: 22px;//asakdan yokaryk kolsa gidya
+      @extend %headerABC
+    }
+    .search-form_field::placeholder{
+      text-shadow: 4px 4px 5px rgb(10, 10, 5);
+      
+      @extend %headerABC;//plachorder ak bolar yaly
+    }
+    .search-form_submit{
+      padding: 15px 39px;
+      text-transform: uppercase;//text uly yazar yaly edya
+      background: #1B7DFF ;
+      border: 0;
+      @extend %mainbutton;
+    }
+    .search-form_submit:hover, .search-form_submit:focus, .search-form_submit:active{
+      background: #0959c2 ;
+    }
+
+  }
+
+  /*intro styles end*/
+
+  /*benefits styles start*/
+  .benefits{
+    margin-bottom: 131px;
+  
+    .benefits_wrap{
+      max-width: 1262px;
+    background-color: #fcf7f7;
+    margin: 0 auto;
+    box-shadow: 0px 2px 20px rgba(21, 24, 36, 0.15993);
+    position: relative;
+    }
+    .benefits_title{
+      background: transparent;
+      width: 100%;
+      font-weight: 400;
+      font-size: 35px;
+      line-height: 42px;
+      background: url(/img/jpg/ashgabat.jpg);
+      
+      padding: 93px 100px 88px 100px;
+      position: absolute;
+      top: 0;
+      left: 0;
+      transform: translateY(-100%);//yokaryk 100% prasent susur diymek
+
+      background-color: #fcf7f7;
+
+    }
+    .benefits_cards{
+      display: grid;
+      grid-template-columns: repeat(3,1fr);//3 kolonko sozdawat edik 
+      column-gap: 55px ;// ostyplarny goydyk
+      row-gap: 55px;
+      padding: 0 100px;
+
+    }
+    .benefits_card{
+      grid-column: span 1;// seydip kartysgalara hersiene 1 colonka beryas
+      margin-bottom: 112px;
+
+    }
+    .benefits_card-pic{
+      max-width: 66px;
+      margin-bottom: 37px;
+
+
+    }
+    .benefist_card-thumb{
+      display: block;
+
+    }
+    .benefist_card-title{
+      @extend %headerABC;
+      color: #000000;
+      margin-bottom: 26px;
+    }
+    .benefist_card-desc{
+      margin-bottom: 39px;
+      color: #000000;
+    }
+    .benefist_card-more{
+      display: inline-block;
+      padding-right: 59px;
+      color: #006DFE;
+      text-decoration: none;
+      background: url(/img/png/06.png) no-repeat 95% center;
+      transition: .2s all;
+    
+    }
+    .benefist_card-more:hover, .benefist_card-more:focus{
+      background: url(/img/png/06.png) no-repeat right center;
+    }
+
+
+
+  }
+
+}
+ /*benefits styles end*/
+ 
+
+/*places styles start*/
+.places{
+  margin-bottom: 131px;
+
+  .places_title{
+    margin-right: 15px;
+   }
+  .places_caption{
+     display: flex;
+     flex-wrap: wrap;
+     align-items: center;
+     justify-content: space-between;
+      margin-bottom: 36px;
+  }
+  .places_view_all{
+    padding-right: 59px;
+    color: #006DFE;
+    text-decoration: none;
+    background: url(/img/png/06.png) no-repeat right center;
+    transition: .2s all;
+  }
+  .places_view_all:hover, .places_view_all:focus{
+    opacity: .65;
+  }
+  .places_cards{
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    column-gap: 10px;//otstup suraatyn arasindaki;
+    row-gap: 10px;
+    
+
+  }
+  .places_card{
+    position: relative;
+    overflow: hidden;
+  }
+  .places_card::after{
+    display: block;
+    content: '';
+    width: 100%;
+    height: 100%;
+    background: rgba(21, 24, 36, 0.4);
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+  }
+  .places_card:hover .places_card-pic{
+    transform: scale(1.05);//animasia efect bolygy hover ucin
+  }
+  .places_card-title{
+    position: absolute;
+    bottom: 27px;
+    left: 29px;
+    z-index: 3;
+    @extend %fototitle;
+  }
+  .places_card_size_lg{
+    grid-column: span 3; //1 readda 3 colonkoni alya
+    
+  }
+  .places_card_size_sm{
+    grid-column: span 2;
+  }
+  .places_card-pic{
+    width: 100%;
+    
+    transition: .15s all;
+  }
+  .places_card-pic_size_lg{
+    height: 354px;
+    object-fit: cover;//kontenirin icinde surat nhili masystbd bolmalydygyny kontrol edya
+  }
+  .places_card-pic_size_sm{
+    height:283px;
+    object-fit: cover;//kontenirin icinde surat nhili masystbd bolmalydygyny kontrol edya
+  }
+  .places_card-link{//surat sylka yaly edilen
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 4;
+  }
+}
+
+
+/*places styles end*/
+
+/*Tours styles start*/
+
+.tours{
+
+  margin-bottom: 139px;
+  .tours_tour{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);//2 kolonkoly kontenir edya 
+    column-gap: 108px;//gapdaldan otstup berdim
+    
+    align-items: center;// wertikalno sentra oklaya
+    margin-bottom: 77px;
+  }
+  .tour_title{
+    font-weight: 400;
+    font-size: 30px;
+    line-height: 40px;
+    margin-bottom: 85px;//asagyn otstup beryan
+
+
+  }
+  .tour_info{
+    padding-left: 47px;//harplr suyser yaly otstup dopalnitelni
+  }
+  .tour_desk{
+    margin-bottom: 58px;
+    font-weight: 400;
+    // width: 519px;
+    // height: 72px;
+  }
+  .tour_more{
+    // display: inline-block;
+    padding-right: 59px;
+    color: #006DFE;
+    text-decoration: none;
+    background: url(/img/png/06.png) no-repeat 95% center;
+    transition: .2s all;
+  }
+  .tour_more:hover, .tour_more:focus{
+    background: url(/img/png/06.png) no-repeat right center;
+  
+  }
+
+
+}
+
+
+/* top styles start*/
+
+
+.top{
+  margin-bottom: 86px;
+  
+  .top_title{
+    margin-bottom: 54px;
+  }
+  .top_cards{
+    
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);// 3 klonk bolsun we hersinde 1 kolanko bolsun diydik
+    column-gap: 57px; //aralaary kalonkalan
+    row-gap:57px;
+    
+  }
+  
+  .top_card-pic{
+    position: relative;
+    margin-bottom: 45px;
+    height: 100%;
+  }
+  .top_card{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    grid-column: span 2;
+  }
+  .top_card-title{
+
+    margin: 0 auto 0 0;
+    
+    @extend %headerABC;
+  }
+  .top_card-stats{
+    
+    padding: 16px 25px;
+    display: flex;
+    flex-wrap: wrap;
+    position: absolute;
+    align-items: center;
+    justify-content: flex-end;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(21, 24, 36, 0.6);
+
+  }
+  .top_card-thumb{
+    height: 100%;
+  }
+  .top_card-like{
+    
+    font-size: 400;
+    color: #FFFFFF;
+    padding-right: 20px;
+    background: url(/img/png/07.png) no-repeat right;
+    margin-right: 14px;
+  }
+  .top_card-comments{
+    
+    font-size: 400;
+    color: #FFFFFF;
+    padding-right: 23px;
+    background: url(/img/png/08.png) no-repeat right;
+  }
+  .top_card-desk{
+    margin-bottom: 31px;
+    
+  }
+  .top_card-more{
+    padding: 12px 19px;
+    text-decoration: none;
+    width: 118px;
+    margin: auto 0 0 0;
+    
+    @extend %mainbutton;
+  }
+  .top_card-more:hover, .top_card-more:focus, .top_card-more:active{
+    background: #0959c2;
+  }
+  
+
+
+}
+
+
+
+/*top  styles end*/
+
+
+
+/*videos   styles start*/
+.videos{
+  width: 100%;
+  .videos_wrapper{
+    max-width: 1440px;
+    margin: 0 auto;
+    position: relative;
+  }
+  .video_item{
+    padding-top: 56.25%;
+
+  }
+  .video_element{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    
+  }
+}
+
+
+/*videos   styles end*/
+
+/*main styles end*/
+
+
+
+
+
+/*footer styles start*/
+.footer{
+  background: #0E1D28;
+  padding: 119px 0 ;
+  .footer_item{
+    display: flex;
+    flex-wrap: wrap;
+
+  }
+  .footer_logo-pic{
+    width: 300px;
+  }
+  .footer_logo{
+    width: 50%;
+
+
+  }
+  .footer_nav{
+    width: 50%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  .footer_menu-title{
+    font-weight: 400;
+    color: #FFFFFF;
+
+  }
+  .footer_menu-link{
+    color: #FFFFFF;
+    text-decoration: none;
+
+
+  }
+  .footer_menu-link:hover, .footer_menu-link:focus, .footer_menu-link:active{
+    opacity: .75;
+  }
+
+  
+}
+
+
+
+
+
+/*footer styles end*/
+
+/*media start*/
+
+@media screen and (max-width: 960px) {
+  .main .benefits {
+    margin-bottom: 75px;
+  }
+  .main .benefits .benefits_card {
+    margin-bottom: 60px;
+  }
+  .main .intro .search-form_field{
+    margin-bottom: 25px;
+  }
+  .main .benefits .benefits_cards {
+    padding: 0 15px;
+    column-gap: 35px;
+  }
+  .main .benefits .benefits_title {
+    padding: 55px 15px;
+  }
+  .main .benefits .benefits_wrap {
+      
+     box-shadow: none;
+  }
+  .places .places_card_size_lg{
+      
+    grid-column: span 6;
+  }
+  .places .places_card_size_sm {
+      
+    grid-column: span 6;
+  }
+  .tours .tours_tour{
+    column-gap: 35px;
+  }
+  .tours .tour_info {
+     padding-left: 0;
+  }
+  .tours .tour_title {
+    margin-bottom: 15px;
+  }
+  .tours .tour_desk {
+    margin-bottom: 15px;
+  }
+  .top .top_cards {
+    column-gap: 25px;
+    row-gap: 55px;
+  }
+  .top .top_card {
+     
+    grid-column: span 3;
+  }
+  .top .top_card-pic {
+    margin-bottom: 25px;
+  }
+  .footer {
+    padding: 60px 0;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .section-title {
+    margin-bottom: 25px;
+  }
+  .section-title::after {
+    width: 78px;
+  }
+  .header_burger {
+    display: block;
+  }
+  .header .header_wrapper {
+    padding-top: 28px;
+  }
+  .header_nav {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #000;
+    z-index: 10;
+    padding: 75px;
+    transform: translateX(100%);
+    transition: .2s all linear;
+  }
+  .header_nav_active {
+     
+    transform: translateX(0);
+  }
+  .header .header_item {
+    width: 100%;
+    margin-right: 0;
+    margin-bottom: 30px;
+  }
+  .header .header_item:last-child {
+    margin-bottom: 0;
+  }
+  .header .header_link {
+      font-size: 42px;
+      line-height: 48px;
+  }
+  .header_nav-close{ 
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    z-index: 11;
+  }
+  .header_nav-close-line{
+    display: block;
+    width: 100%;
+    height: 2px;
+    background-color: #fff;
+    position: absolute;
+    top: 50%;
+  }
+  .header_nav-close-line:first-child{
+      
+    transform: translateY(-50%) rotate(45deg);
+  }
+  .header_nav-close-line:last-child{
+   
+    transform: translateY(-50%) rotate(-45deg);
+  }
+  .main .intro  {
+    padding-top: 125px;
+  }
+  .main .intro .intro_title {
+    font-size: 32px;
+    line-height: 48px;
+  }
+  .main .intro .intro_subtitle {
+      font-size: 14px;
+  }
+  .main .intro .search-form_field {
+    width: 100%;
+    margin-right: 0;
+    padding-bottom: 12px;
+    background: transparent url(../img/svg/circle-ico.svg) no-repeat left 2px;
+  }
+  .main .intro .search-form_field ::-webkit-input-placeholder{
+    font-size: 16px;
+  }
+  .main .intro .search-form_field ::-moz-placeholder{
+    font-size: 16px;
+  }
+  .main .intro .search-form_field :-ms-input-placeholder{
+    font-size: 16px;
+  }
+  .main .intro .search-form_field ::-ms-input-placeholder{
+    font-size: 16px;
+  }
+  .main .intro .search-form_field ::placeholder{
+    font-size: 16px;
+  }
+  .main .intro .intro_subtitle {
+    width: 100%;
+  }
+
+  .main .benefits {
+    margin-bottom: 36px;
+  }
+  .main .benefits .benefits_card {
+      
+    grid-column: span 3;
+    margin-bottom: 40px;
+  }
+  .main .benefits .benefits_card-pic {
+    margin-bottom: 20px;
+  }
+  .main .benefits .benefits_title {
+    margin-bottom: 12px;
+  }
+  .main .benefits .benefist_card-desc {
+    margin-bottom: 20px;
+  }
+  .places {
+    margin-bottom: 76px;
+  }
+  .places .places_card_size_lg , .places .places_card_size_sm {
+    height: 230px;
+  }
+  .places .places_view_all {
+    margin-bottom: 25px;
+  }
+  .places__caption{
+    margin-bottom: 0;
+  }
+  .tours {
+    margin-bottom: 76px;
+  }
+  .tour__pic, .tours .tour_info {
+      
+    grid-column: span 2;
+  }
+  .tour__pic {
+    margin-bottom: 12px;
+  }
+  .tour__pic_mob-first {
+      
+    grid-row-start: -1;
+  }
+  .tours .tours_tour {
+    margin-bottom: 50px;
+  }
+  .top {
+    margin-bottom: 76px;
+  }
+  .top .top_card {
+      
+    grid-column: span 6;
+  }
+  .top .top_card-stats {
+    max-width: 386px;
+  }
+  .top .top_card-desk {
+    margin-bottom: 15px;
+  }
+  .footer .footer_logo {
+    width: 100%;
+    margin-bottom: 24px;
+  }
+  .footer .footer_nav {
+    width: 100%;
+  }
+  .footer__menu {
+    width: 50%;
+    margin-bottom: 24px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .header__nav {
+    padding: 75px 30px;
+  }
+}
+
+
+
+/* Media end */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
